@@ -10,7 +10,11 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173',
+    'https://startup-analyzer-frontend.vercel.app',
+    /\.vercel\.app$/
+  ],
   methods: ['GET', 'POST'],
   credentials: true
 }));
