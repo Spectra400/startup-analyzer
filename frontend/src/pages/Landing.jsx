@@ -66,6 +66,14 @@ const PARTICLES = [
 
 // ─── Landing Page ──────────────────────────────────────────────────────────────
 export default function Landing() {
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768);
+
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
       {/* ── All keyframes injected directly in JSX so they are guaranteed present ── */}
@@ -301,23 +309,62 @@ export default function Landing() {
           {/* ── Feature Cards ── */}
           <section className="pb-20 px-6">
             <motion.div
-              className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+                gap: '24px',
+                maxWidth: '1100px',
+                margin: '0 auto',
+                padding: '0 24px',
+                alignItems: 'stretch'
+              }}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
               variants={stagger}
             >
-              {features.map((feat, i) => (
-                <motion.div key={feat.title} variants={fadeUp}>
-                  <GlassCard
-                    title={feat.title}
-                    icon={feat.icon}
-                    content={feat.content}
-                    accentColor={feat.accentColor}
-                    delay={i * 0.1}
-                  />
-                </motion.div>
-              ))}
+              {features.map((feat, i) => {
+                const Icon = feat.icon;
+                return (
+                  <motion.div key={feat.title} variants={fadeUp}>
+                    <div style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'flex-start',
+                      alignItems: 'flex-start',
+                      padding: '28px',
+                      height: '100%',
+                      minHeight: '180px',
+                      borderRadius: '16px',
+                      background: 'rgba(255,255,255,0.05)',
+                      border: '1px solid rgba(255,255,255,0.1)',
+                      backdropFilter: 'blur(20px)',
+                      boxSizing: 'border-box'
+                    }}>
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        marginBottom: '16px'
+                      }}>
+                        <Icon className="w-6 h-6" style={{ color: feat.accentColor }} />
+                        <h3 className="font-orbitron font-bold text-white tracking-widest text-sm m-0">
+                          {feat.title}
+                        </h3>
+                      </div>
+                      <p style={{
+                        color: '#94A3B8',
+                        fontSize: '14px',
+                        lineHeight: '1.6',
+                        margin: 0,
+                        textAlign: 'left'
+                      }}>
+                        {feat.content}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </motion.div>
           </section>
 
