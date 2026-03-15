@@ -13,10 +13,17 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-neonBlue/10"
-      style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none', borderRight: 'none' }}
+    <nav className="fixed top-0 left-0 right-0 z-[1000] glass-card border-b border-neonBlue/10"
+      style={{ 
+        borderRadius: 0, 
+        borderTop: 'none', 
+        borderLeft: 'none', 
+        borderRight: 'none',
+        width: '100%',
+        padding: '0 24px'
+      }}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
           <Rocket className="w-6 h-6 text-neonBlue group-hover:rotate-12 transition-transform duration-300" />
@@ -69,7 +76,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden px-6 pb-4 flex flex-col gap-4">
+        <div className="md:hidden pb-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.path}

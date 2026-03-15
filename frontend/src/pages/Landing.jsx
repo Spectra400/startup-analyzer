@@ -110,7 +110,7 @@ export default function Landing() {
       `}</style>
 
       {/* ═══ OUTER CONTAINER ═══ */}
-      <div style={{ minHeight: '100vh', background: '#030308', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ minHeight: '100vh', width: '100%', background: '#030308', position: 'relative', overflow: 'hidden', paddingTop: '80px' }}>
 
         {/* ── Layer 1: Gradient base ── */}
         <div style={{
@@ -225,7 +225,14 @@ export default function Landing() {
         {/* ═══════════════════════════════════════════════════════
             EXISTING CONTENT — untouched, raised above background
         ═══════════════════════════════════════════════════════ */}
-        <div style={{ position: 'relative', zIndex: 10 }}>
+        <div style={{ 
+          position: 'relative', 
+          zIndex: 10,
+          maxWidth: '1200px',
+          margin: '0 auto',
+          padding: '0 24px',
+          textAlign: 'center'
+        }}>
 
           {/* ── Hero ── */}
           <section className="min-h-screen flex items-center justify-center pt-20 px-6">

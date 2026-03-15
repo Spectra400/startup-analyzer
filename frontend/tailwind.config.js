@@ -3,6 +3,8 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: 'class',
   theme: {
@@ -12,7 +14,6 @@ export default {
         neonPurple: '#A855F7',
         neonPink: '#FF006E',
         darkBg: '#050510',
-        glassBg: 'rgba(255,255,255,0.05)',
       },
       fontFamily: {
         orbitron: ['Orbitron', 'sans-serif'],
@@ -40,4 +41,4 @@ export default {
     },
   },
   plugins: [],
-};
+}

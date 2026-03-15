@@ -70,7 +70,12 @@ class ErrorBoundary extends React.Component {
 // ─── App ───────────────────────────────────────────────────────────────────────
 function App() {
   return (
-    <div className="min-h-screen bg-darkBg">
+    <div style={{ 
+      minHeight: '100vh', 
+      background: '#050510',
+      overflowX: 'hidden',
+      width: '100%'
+    }}>
       <div className="star-bg" />
       <Navbar />
       <ErrorBoundary>
