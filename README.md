@@ -1,5 +1,19 @@
 # 🚀 AI Startup Idea Validator
 
+![Status](https://img.shields.io/badge/Status-Live-brightgreen)
+![React](https://img.shields.io/badge/React-18-blue)
+![Node.js](https://img.shields.io/badge/Node.js-Express-green)
+![Groq AI](https://img.shields.io/badge/AI-Groq%20LLaMA3-orange)
+![Vercel](https://img.shields.io/badge/Deployed-Vercel-black)
+
+## 🌐 Live Demo
+### 👉 [https://startup-analyzer-e9oz.vercel.app](https://startup-analyzer-e9oz.vercel.app)
+
+> ⚠️ Note: Backend is hosted on Render free tier.
+> First request may take 30 seconds to wake up — please be patient!
+
+---
+
 An AI-powered full-stack web application that validates startup ideas using the Groq API (LLaMA 3 70B). Get instant market analysis, competitor insights, risk assessment, and a success score — all displayed in a futuristic cyberpunk dashboard.
 
 ---
@@ -12,6 +26,17 @@ An AI-powered full-stack web application that validates startup ideas using the 
 - **History Tracking** — All reports saved to browser localStorage for easy recall
 - **Futuristic UI** — Glassmorphism, neon glows, neural particle background, Framer Motion animations
 
+## 📊 Interactive Charts
+
+| Chart | Type | Data |
+|-------|------|------|
+| 🎯 Success Score | Radial Bar | AI success score 0-100 |
+| 🕸️ Market Opportunity | Radar | 6 market dimensions |
+| 📊 Competitor Landscape | Horizontal Bar | Competitor strengths |
+| 📈 Revenue Projection | Area Chart | 12-month forecast |
+| 🍩 Risk Distribution | Donut Pie | 5 risk categories |
+| 🗓️ MVP Timeline | Progress Bars | 3 development phases |
+
 ## 🛠 Tech Stack
 
 | Layer      | Technologies                                              |
@@ -21,6 +46,16 @@ An AI-powered full-stack web application that validates startup ideas using the 
 | AI Model   | LLaMA 3 70B (via Groq API)                                |
 | PDF        | jsPDF                                                     |
 | Icons      | Lucide React                                              |
+
+## 🚀 Deployment
+
+| Service | URL |
+|---------|-----|
+| 🌐 Frontend | https://startup-analyzer-e9oz.vercel.app |
+| ⚙️ Backend | https://startup-analyzer-backend.onrender.com |
+| 📁 Repository | https://github.com/Spectra400/startup-analyzer |
+
+---
 
 ## 📦 Setup Instructions
 
@@ -65,6 +100,17 @@ npm run dev
 
 The frontend runs at **http://localhost:5173** and the backend API at **http://localhost:5000**.
 
+## 🔑 Getting a Free Groq API Key
+
+1. Go to [console.groq.com](https://console.groq.com)
+2. Sign up for free — no credit card required
+3. Click **API Keys** in left sidebar
+4. Click **Create API Key**
+5. Copy the key — it starts with `gsk_`
+6. Paste it in `backend/.env` as `GROQ_API_KEY`
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -95,3 +141,18 @@ Startup_Analyzer/
 ## 📄 License
 
 MIT
+
+---
+
+## 🙏 Acknowledgements
+
+- [Groq](https://groq.com) — Free AI API with LLaMA 3 70B
+- [Vercel](https://vercel.com) — Frontend hosting
+- [Render](https://render.com) — Backend hosting
+- [Recharts](https://recharts.org) — Interactive charts
+- [Framer Motion](https://framer.com/motion) — Animations
+- [Three.js](https://threejs.org) — Neural background
+
+---
+
+*Built with ❤️ using React, Node.js, and Groq AI*
