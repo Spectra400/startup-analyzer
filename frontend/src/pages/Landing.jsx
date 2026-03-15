@@ -235,7 +235,18 @@ export default function Landing() {
         }}>
 
           {/* ── Hero ── */}
-          <section className="min-h-screen flex items-center justify-center pt-20 px-6">
+          <section
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: '100vh',
+              paddingTop: '60px',
+              paddingBottom: '40px'
+            }}
+            className="px-6"
+          >
             <motion.div
               className="text-center max-w-4xl"
               variants={stagger}
