@@ -87,4 +87,4 @@ MIT
 
 ---
 
-*Built with ❤️ using React, Node.js, and Groq AI*
+*Built with  using React, Node.js, and Groq AI*
